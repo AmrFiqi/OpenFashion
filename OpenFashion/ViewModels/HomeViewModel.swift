@@ -9,13 +9,26 @@ import Foundation
 
 class HomeViewModel {
     
+    // MARK: - Variables
+    
+    var currentIndex = 0
+    var numberOfBannerImages = 3
+    
     // MARK: - Class Methods
     
     func numberOfSections() -> Int {
-        5
+        10
     }
     
     func numberOfRows(in section: Int) -> Int {
-        10
+        1
+    }
+    
+    func imageNameForCurrentIndex() -> String {
+        return "banner\(currentIndex)"
+    }
+    
+    func scrollToNextImage() {
+        currentIndex = (currentIndex + 1) % numberOfBannerImages
     }
 }
